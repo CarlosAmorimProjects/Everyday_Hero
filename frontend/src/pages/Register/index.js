@@ -15,7 +15,6 @@ function Register() {
   const [email, setEmail] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
   const [city, setCity] = useState('');
-  const [uf, setUf] = useState('');
 
   const history = useHistory();
 
@@ -27,8 +26,7 @@ function Register() {
       name,
       email,
       whatsapp,
-      city,
-      uf
+      city
     };
 
     try {
@@ -85,13 +83,7 @@ function Register() {
               value={city}
               onChange={e => setCity(e.target.value)}
             />
-
-            <input
-              placeholder="UF"
-              style={{ width: 80 }}
-              value={uf}
-              onChange={e => setUf(e.target.value)}
-            />
+            
           </div>
 
           <button className="button" type="submit">Cadastrar</button>
