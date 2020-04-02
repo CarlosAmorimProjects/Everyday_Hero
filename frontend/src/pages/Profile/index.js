@@ -5,7 +5,7 @@ import { FiPower, FiTrash2 } from 'react-icons/fi';
 import api from '../../services/api';
 
 import './styles.css';
-import logoImg from '../../assets/logo.svg';
+import logoImg from '../../assets/logo.png';
 
 
 function Profile() {
@@ -36,7 +36,7 @@ function Profile() {
       setIncidents(incidents.filter(incident => incident.id !== id));
 
     } catch (error) {
-      alert('Erro ao deletar caso');
+      alert('Error deleting the case');
     }
   }
 
@@ -51,11 +51,11 @@ function Profile() {
 
       <header>
 
-        <img src={logoImg} alt="Be The Hero" />
-        <span>Bem vindo, {ongName}</span>
+        <img src={logoImg} alt="Hero" />
+        <span>Welcome, {ongName}</span>
 
         <Link className="button" to="/incidents/new">
-          Cadastrar novo caso
+          Register new case
         </Link>
 
         <button onClick={handleLogout} type="button">
@@ -63,25 +63,25 @@ function Profile() {
         </button>
 
       </header>
-      <h1>Casos listados</h1>
+      <h1>Registered cases</h1>
 
       <ul>
 
         {incidents.map(incident => (
           <li key={incident.id}>
-            <strong>CASO:</strong>
+            <strong>CASE:</strong>
             <p>{incident.title}</p>
 
-            <strong>DESCRIÇÃO</strong>
+            <strong>DESCRIPTION</strong>
             <p>{incident.description}</p>
 
-            <strong>VALOR:</strong>
+            <strong>AMOUNT NEEDED:</strong>
             <p>
               {Intl.NumberFormat(
-                'pt-BR',
+                'pt-PT',
                 {
                   style: 'currency',
-                  currency: 'BRL'
+                  currency: 'EUR'
                 }
               ).format(incident.value)}
             </p>

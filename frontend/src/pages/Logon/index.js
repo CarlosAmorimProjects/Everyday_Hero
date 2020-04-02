@@ -7,7 +7,7 @@ import api from "../../services/api";
 import "./styles.css";
 
 import heroesImg from "../../assets/heroes.png";
-import logoImg from "../../assets/logo.svg";
+import logoImg from "../../assets/logo.png";
 
 export default function Logon () {
     const [id, setId] = useState("");
@@ -25,7 +25,7 @@ export default function Logon () {
             history.push("/profile");
         }
         catch (err) {
-            alert("Erro, falha no login")
+            alert("Login error")
         }
     }
 
@@ -44,7 +44,7 @@ export default function Logon () {
                     <button className="button" type="submit"> Log on</button>
 
                     <Link className="back-link" to="/register">
-                        <FiLogIn size={16} color="#E02041"/>
+                        <FiLogIn size={20} color="#E02041"/>
                         I don't have an account
                     </Link>
                 </form>

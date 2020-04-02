@@ -8,7 +8,7 @@ import api from '../../services/api';
 
 import './styles.css';
 
-import logoImg from '../../assets/logo.svg';
+import logoImg from '../../assets/logo.png';
 
 function Register() {
   const [name, setName] = useState('');
@@ -31,10 +31,10 @@ function Register() {
 
     try {
       const response = await api.post('ongs', data);
-      alert(`Seu ID de acesso:${response.data.id}`);
+      alert(`Your access ID, save it, it's your unique access identification to log in:${response.data.id}`);
       history.push('/');
     } catch (error) {
-      alert('Erro no cadastro, tente novamente!');
+      alert('Error registering, try again!');
     }
 
 
@@ -46,19 +46,19 @@ function Register() {
         <section>
           <img src={logoImg} alt="Be The Hero" />
 
-          <h1>Cadastro</h1>
-          <p>Faça seu cadastro, entre na plataforma e ajude pessoas a encontrarem os casos de sua ONG.</p>
+          <h1>Register</h1>
+          <p>Register, enter the website, place your ad asking for help, and let people know your organization needs help.</p>
 
           <Link className="back-link" to="/">
             <FiArrowLeft size={16} color="#e02041" />
-            Voltar
+            back
             </Link>
         </section>
 
         <form onSubmit={handleRegister}>
 
           <input
-            placeholder="Nome da ONG"
+            placeholder="Organization name"
             value={name}
             onChange={e => setName(e.target.value)}
           />
@@ -79,14 +79,14 @@ function Register() {
           <div className="input-group">
 
             <input
-              placeholder="Cidade"
+              placeholder="City"
               value={city}
               onChange={e => setCity(e.target.value)}
             />
             
           </div>
 
-          <button className="button" type="submit">Cadastrar</button>
+          <button className="button" type="submit">Register</button>
         </form>
 
       </div>

@@ -65,7 +65,7 @@ form textarea {
 
 
 
-.back-link section.form form a {
+.back-link {
     display: flex;
     align-items: center;
     margin-top: 40px;
@@ -76,10 +76,10 @@ form textarea {
     transition: opacity 0,2s;
 }
 
-.back-link section.form form a svg {
+.back-link svg {
     margin-right: 8px;
 }
 
-.back-link section.form form a:hover {
+.back-link:hover {
     opacity: 0.8;
 }
